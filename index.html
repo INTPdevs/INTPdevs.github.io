@@ -68,8 +68,9 @@
     <pre class="moar"><strong>More Things</strong>
 - <a href="https://github.com/INTPdevs/Examples-Exponents">Goof off with exponents and shit</a>
 - <a x-bind="whhhy" href="http://whywouldyouevenclickthat.example.com">Pictures of your mom naked, probably</a>
+- <a x-bind="kill_sloth" href="#">JFC kill the sloth already</a>
 </pre>
-    <div class="marquee">
+    <div class="marquee sloth">
       <img src="http://img.ifcdn.com/images/6b405efe10dd19a71aef2697d60865342f319e0029c11bd3d1c31235450891e1_1.gif">
     </div>
 
@@ -85,6 +86,19 @@
       alert("Why would you even click that!?!");
       event.stopPropagation();
       return false;
+    },
+    "kill_sloth": function(event) {
+      event.preventDefault();
+      var link = document.querySelectorAll("a[x-bind=kill_sloth]")[0];
+      if ( link ) {
+        link.textContent ="Sloth Killed";
+        link.removeAttribute('href');
+      }
+      var sloth = document.querySelectorAll("div.sloth")[0];
+      if ( sloth ) {
+        sloth.remove();
+      }
+      event.stopPropagation();
     }
   };
 
