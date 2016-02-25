@@ -30,9 +30,19 @@
             margin: 0 auto 0 auto;
             padding: 5px;
           }
+          @keyframes flash {
+              0%  { color: inherit; text-shadow: inherit }
+              80% { color: #F00; text-shadow: 0px 0px 20px #FF6 }
+              90% { color: #FF0; text-shadow: 0px 0px 20px #EE3 }
+              100% { color: #FFF; text-shadow: 0px 0px 10px #DD0 }
+
+          }
+          a:hover {
+            animation: flash 0.2s ease infinite;
+          }
           @keyframes left-one {
                0%   { transform: translateX(-150%); }
-              50% { transform: translateX(200%);    }
+              50%   { transform: translateX(200%);  }
              100%   { transform: translateX(-150%); }
           }
           div.marquee {
