@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>INTPdevs on Github</title>
+      <style>
+          * {
+            font-family: sans-serif;
+            font-size: 150px;
+          }
+          html {
+            background-color: #000;
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+              padding: 0;
+          }
+          body {      
+            background-color: transparent; 
+              height: 100%;
+                margin: 0;
+                padding: 0;
+          }
+          h1{ margin: 0 }
+          @keyframes flash {
+              0%  { color: inherit; text-shadow: inherit;  }
+              80% { color: #F00; text-shadow: 0px 0px 20px #FF6 }
+              90% { color: #FF0; text-shadow: 0px 0px 20px #EE3 }
+              100% { color: #FFF; text-shadow: 0px 0px 10px #DD0 }
+          }
+          @keyframes flashbg {
+              0%  { background-color: inherit; text-shadow: inherit;  }
+              80% { background-color: #F00; text-shadow: 0px 0px 20px #FF6 }
+              90% { background-color: #FF0; text-shadow: 0px 0px 20px #EE3 }
+              100% { background-color: #FFF; text-shadow: 0px 0px 10px #DD0 }
+          }
+
+          body {
+            animation: flashbg 0.2s ease-in-out infinite 
+          }
+          h1:nth-child(1) { animation: flash 0.15s ease infinite }
+          h1:nth-child(2) { animation: flash 0.3s ease-in-out infinite }
+
+          h1 {
+            width: 100%;
+            text-align: center;
+          }
+      </style>
+  </head>
+  <body>
+    <h1 style="font-size: 200px">Blink</h1>
+    <h1 style="font-size: 110px">Motherfucker</h1>
+  </body>
+</html>  
