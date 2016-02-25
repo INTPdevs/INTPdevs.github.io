@@ -59,21 +59,15 @@ $.fn.extend({
 
 	var pageWidth = $(document).width();
 
-	console.log(pageWidth);
-
-
 	/**
 	 * On ready init function
 	 */
 	$( window ).load(function() {
 
-		//fullCharacter.hide();
-
 		$(this).audioShizzle( loopaudio );
 
 		lifeissad.hide();
 
-		//fullCharacter.addClass('animated fadeIn');
 		var $curr = $('.toggle').first();
 		// Hide all the divs
 		$('.toggle').addClass('hide');
@@ -87,9 +81,6 @@ $.fn.extend({
 			found = false;
 
 				$(".toggle").each(function(index) {
-				// If the curr element is the 
-				// element in iteration
-				// select the next indexed element..
 				if($(this).is($curr) && !found) {
 					var nextIndex = index + 1;
 					if(nextIndex >= len) {

@@ -2,67 +2,61 @@
 
 // These animations will be included
 $use-fadeIn: true;
+// If you want to develop and don't need that seizure epilepsia attack
+$dev: true !default;
 
 /**
  * Random color madness
  */
 @function randomizeColor(){
-  $color: (
-    octal: (
-      red: random(256)-1,
-      green: random(256)-1,
-      blue: random(256)-1
-    ),
-    percent: (
-      red: random(101)-1,
-      green: random(101)-1,
-      blue: random(101)-1,
-      saturation: random(101)-1,
-      light: random(101)-1
-    ),
-    deg: (
-      hue: random(361)-1
-    ),
-    fraction: (
-      alpha: random(100)/100
-    )
-  );
-  @return $color;
+	$color: (
+		octal: (
+			red: random(256)-1,
+			green: random(256)-1,
+			blue: random(256)-1
+		),
+		percent: (
+			red: random(101)-1,
+			green: random(101)-1,
+			blue: random(101)-1,
+			saturation: random(101)-1,
+			light: random(101)-1
+		),
+		deg: (
+			hue: random(361)-1
+		),
+		fraction: (
+			alpha: random(100)/100
+		)
+	);
+	@return $color;
 }
 
 @function color($base, $component) {
-  $color: randomizeColor();
-  @return map-get(map-get($color, $base), $component);
+	$color: randomizeColor();
+	@return map-get(map-get($color, $base), $component);
 }
 
 @function getRandomColor($format: NULL) {
-  @if $format == "hex" {
-    @return rgb(color(octal, red), color(octal, green), color(octal, blue));
-  }
-  @else if $format == "rgb" { 
-    @return unquote("rgb(#{color(octal, red)}, #{color(octal, green)}, #{color(octal, blue)})");
-  }
-  @else if $format == "%rgb" { 
-    @return unquote("rgb(#{color(percent, red)}%, #{color(percent, green)}%, #{color(percent, blue)}%)");
-  }
-  @else if $format == "rgba" { 
-    @return unquote("rgba(#{color(octal, red)}, #{color(octal, green)}, #{color(octal, blue)}, #{color(fraction, alpha)})");
-  }
-  @else if $format == "%rgba" { 
-    @return unquote("rgba(#{color(percent, red)}%, #{color(percent, green)}%, #{color(percent, blue)}%, #{color(fraction, alpha)})");
-  }
-  @else if $format == "hsl" { 
-    @return unquote("hsl(#{color(deg, hue)}, #{color(percent, saturation)}%, #{color(percent, light)}%)");
-  }
-  @else if $format == "hsla" { 
-    @return unquote("hsla(#{color(deg, hue)}, #{color(percent, saturation)}%, #{color(percent, light)}%, #{color(fraction, alpha)})");
-  }
-  @else { 
-    @return nth($named-colors, random(147));
-  }
+	@if $format == "hex" {
+		@return rgb(color(octal, red), color(octal, green), color(octal, blue));
+	} @else if $format == "rgb" { 
+		@return unquote("rgb(#{color(octal, red)}, #{color(octal, green)}, #{color(octal, blue)})");
+	} @else if $format == "%rgb" { 
+		@return unquote("rgb(#{color(percent, red)}%, #{color(percent, green)}%, #{color(percent, blue)}%)");
+	} @else if $format == "rgba" { 
+		@return unquote("rgba(#{color(octal, red)}, #{color(octal, green)}, #{color(octal, blue)}, #{color(fraction, alpha)})");
+	} @else if $format == "%rgba" { 
+		@return unquote("rgba(#{color(percent, red)}%, #{color(percent, green)}%, #{color(percent, blue)}%, #{color(fraction, alpha)})");
+	} @else if $format == "hsl" { 
+		@return unquote("hsl(#{color(deg, hue)}, #{color(percent, saturation)}%, #{color(percent, light)}%)");
+	} @else if $format == "hsla" { 
+		@return unquote("hsla(#{color(deg, hue)}, #{color(percent, saturation)}%, #{color(percent, light)}%, #{color(fraction, alpha)})");
+	} @else { 
+		@return nth($named-colors, random(147));
+	}
 }
 
-$dev: true !default;
 
 body {
 	background: #FFF;
