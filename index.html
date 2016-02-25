@@ -4,8 +4,13 @@
       <meta charset="utf-8">
       <title>INTPdevs on Github</title>
       <style>
-          html, body {
+          html {
             background-color: #eeeeee;
+            overflow-x: hidden;
+            height: 100%;
+          }
+          body {
+            background-color: transparent;
           }
           pre.inset, pre.thingbar {
             box-sizing: border-box;
@@ -25,14 +30,31 @@
             margin: 0 auto 0 auto;
             padding: 5px;
           }
+          @keyframes left-one {
+               0%   { transform: translateX(-150%); }
+              50% { transform: translateX(200%);    }
+             100%   { transform: translateX(-150%); }
+          }
+          div.marquee {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+          }
+          div.marquee > img {
+            position: relative;
+            animation: left-one 5s ease-in-out infinite;
+          }
       </style>
   </head>
   <body>
     <pre class="inset"> There should be something here. But eh. </pre>
     <pre class="thingbar"> <a href="https://github.com/INTPdevs">INTPDevs</a> | <a href="https://github.com/INTPdevs/INTPdevs.github.io">Website Sauce</a> | <a href="https://www.facebook.com/groups/855152957860657/">Faceblag</a> | <a x-bind="dont_click" href="http://goat.sex/">Don't Click</a></pre>
-    <marquee behavior="alternate" scrollamount="20">
+    <div class="marquee">
       <img src="http://img.ifcdn.com/images/6b405efe10dd19a71aef2697d60865342f319e0029c11bd3d1c31235450891e1_1.gif">
-    </marquee>
+    </div>
 
     <script type="application/javascript">
 (function() {
