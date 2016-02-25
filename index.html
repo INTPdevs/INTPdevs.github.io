@@ -12,7 +12,7 @@
           body {
             background-color: transparent;
           }
-          pre.inset, pre.thingbar {
+          pre.inset, pre.thingbar, pre.moar {
             box-sizing: border-box;
             width: 50%;
             background-color: #ffffff;
@@ -26,7 +26,7 @@
             margin: 25% auto 0 auto;
             height: 100px;
           }
-          pre.thingbar {
+          pre.thingbar, pre.moar {
             margin: 0 auto 0 auto;
             padding: 5px;
           }
@@ -52,6 +52,10 @@
   <body>
     <pre class="inset"> There should be something here. But eh. </pre>
     <pre class="thingbar"> <a href="https://github.com/INTPdevs">INTPDevs</a> | <a href="https://github.com/INTPdevs/INTPdevs.github.io">Website Sauce</a> | <a href="https://www.facebook.com/groups/855152957860657/">Faceblag</a> | <a x-bind="dont_click" href="http://goat.sex/">Don't Click</a></pre>
+    <pre class="moar"><strong>More Things</strong>
+- <a href="https://github.com/INTPdevs/Examples-Exponents">Goof off with exponents and shit</a>
+- <a x-bind="whhhy" href="http://whywouldyouevenclickthat.example.com">Pictures of your mom naked, probably</a>
+</pre>
     <div class="marquee">
       <img src="http://img.ifcdn.com/images/6b405efe10dd19a71aef2697d60865342f319e0029c11bd3d1c31235450891e1_1.gif">
     </div>
@@ -63,6 +67,12 @@
     "dont_click": function() {
       alert("You're an idiot, but w/ever");
     },
+    "whhhy": function(event) {
+      event.preventDefault();
+      alert("Why would you even click that!?!");
+      event.stopPropagation();
+      return false;
+    }
   };
 
   var matches = document.querySelectorAll("[x-bind]");
@@ -70,7 +80,7 @@
     Array.prototype.forEach.call(match.attributes,function(attribute) {
       if ( attribute.name == 'x-bind' ) {
         var binding = bindings[attribute.value];
-        match.addEventListener('click', binding );
+        match.addEventListener('click', binding, false);
       }
     });
   });
