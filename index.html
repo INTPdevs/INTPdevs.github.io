@@ -11,8 +11,9 @@
           }
           body {
             background-color: transparent;
+            font-family: monospace;
           }
-          pre.inset, pre.thingbar, pre.moar {
+          body > div {
             box-sizing: border-box;
             width: 50%;
             background-color: #ffffff;
@@ -22,12 +23,27 @@
             overflow: auto;
             text-overflow: ellipsis;
           }
-          pre.inset {
-            margin: 25% auto 0 auto;
-            height: 100px;
+          ul {
+            padding: 0px;
+            margin: 0px;
           }
-          pre.thingbar, pre.moar {
-            margin: 0 auto 0 auto;
+          li {
+            list-style: outside square;
+          }
+          li:before {
+            content: '- ';
+          }
+          .inset {
+            margin: 25% auto 0;
+            height: 100px;
+            padding-left: 10px;
+          }
+          .thingbar {
+            margin: auto;
+            padding: 5px 5px 5px 15px;
+          }
+          .moar {
+            margin: auto;
             padding: 5px;
           }
           @keyframes shimmy1 {
@@ -35,9 +51,9 @@
               50%   { transform: rotateZ(0.5deg) translateX(-0.5%) translateY(1%) }
              100%   { transform: rotateZ(-0.5deg) translateX(0.5%) translateY(-1%) }
           }
-          pre:nth-of-type(1) { animation: shimmy1 0.976s ease-in-out infinite  }
-          pre:nth-of-type(2) { animation: shimmy1 1.123s ease-in-out infinite }
-          pre:nth-of-type(3) { animation: shimmy1 1.001s ease-in-out infinite }
+          .inset { animation: shimmy1 0.976s ease-in-out infinite  }
+          .thingbar { animation: shimmy1 1.123s ease-in-out infinite }
+          .moar { animation: shimmy1 1.001s ease-in-out infinite }
 
           @keyframes flash {
               0%  { color: inherit; text-shadow: inherit; font-weight: normal }
@@ -53,7 +69,7 @@
               50%   { transform: translateX(200%);  }
              100%   { transform: translateX(-150%); }
           }
-          div.marquee {
+          .marquee {
             position: fixed;
             left: 0;
             top: 0;
@@ -61,24 +77,30 @@
             width: 100%;
             z-index: -1;
           }
-          div.marquee > img {
+          .marquee > img {
             position: relative;
             animation: left-one 5s ease-in-out infinite;
           }
       </style>
   </head>
   <body>
-    <pre class="inset"> There should be something here. But eh. </pre>
-    <pre class="thingbar"> <a href="https://github.com/INTPdevs">INTPDevs</a> | <a href="https://github.com/INTPdevs/INTPdevs.github.io">Website Sauce</a> | <a href="https://www.facebook.com/groups/855152957860657/">Faceblag</a> | <a x-bind="dont_click" href="http://goat.sex/">Don't Click</a></pre>
-    <pre class="moar"><strong>More Things</strong>
-- <a href="https://github.com/INTPdevs/Examples-Exponents">Goof off with exponents and shit</a>
-- <a x-bind="whhhy" href="http://whywouldyouevenclickthat.example.com">Pictures of your mom naked, probably</a>
-- <a x-bind="kill_sloth" href="#">JFC kill the sloth already</a>
-- <a href="blink.html">Instant Seizure Generator [ I Accept by Clicking this link
-  I risk my own health]</a>
-- <a href="pirate/">Yar - har - fiddle-dee-dee</a>
-</pre>
-    <div class="marquee sloth">
+    <div class="inset">There should be something here. But eh.</div>
+    <div class="thingbar">
+      <a href="https://github.com/INTPdevs">INTPDevs</a> | 
+      <a href="https://github.com/INTPdevs/INTPdevs.github.io">Website Sauce</a> | 
+      <a href="https://www.facebook.com/groups/855152957860657/">Faceblag</a> | 
+      <a data-bind="dont_click" href="http://goat.sex/">Don't Click</a>
+    </div>
+    <div class="moar"><strong>More Things</strong>
+      <ul>
+        <li><a href="https://github.com/INTPdevs/Examples-Exponents">Goof off with exponents and shit</a></li>
+        <li><a data-bind="whhhy" href="http://whywouldyouevenclickthat.example.com">Pictures of your mom naked, probably</a></li>
+        <li><a data-bind="kill_sloth" href="#">JFC kill the sloth already</a></li>
+        <li><a href="blink.html">Instant Seizure Generator [I Accept by Clicking this link I risk my own health]</a></li>
+        <li><a href="pirate/">Yar - har - fiddle-dee-dee [URGENT!!!11!!! S0uNd aLeRt]</a></li>
+      </ul>
+    </div>
+    <div class="marquee" id="sloth">
       <img src="http://img.ifcdn.com/images/6b405efe10dd19a71aef2697d60865342f319e0029c11bd3d1c31235450891e1_1.gif">
     </div>
 
@@ -90,34 +112,32 @@
       alert("You're an idiot, but w/ever");
     },
     "whhhy": function(event) {
-      event.preventDefault();
       alert("Why would you even click that!?!");
+      event.preventDefault();
       event.stopPropagation();
       return false;
     },
     "kill_sloth": function(event) {
-      event.preventDefault();
-      var link = document.querySelectorAll("a[x-bind=kill_sloth]")[0];
+      var link = event.currentTarget;
       if ( link ) {
         link.textContent ="Sloth Killed";
         link.removeAttribute('href');
       }
-      var sloth = document.querySelectorAll("div.sloth")[0];
+      var sloth = document.querySelector("#sloth");
       if ( sloth ) {
         sloth.remove();
       }
+      event.preventDefault();
       event.stopPropagation();
     }
   };
 
-  var matches = document.querySelectorAll("[x-bind]");
-  Array.prototype.forEach.call(matches,function(match) {
-    Array.prototype.forEach.call(match.attributes,function(attribute) {
-      if ( attribute.name == 'x-bind' ) {
-        var binding = bindings[attribute.value];
-        match.addEventListener('click', binding, false);
-      }
-    });
+  var matches = document.querySelectorAll("[data-bind]");
+  Array.prototype.forEach.call(matches, function(match) {
+    var binding = bindings[match.dataset.bind];
+    if (typeof binding !== 'undefined') {
+      match.addEventListener('click', binding, false);
+    }
   });
 
 })();
