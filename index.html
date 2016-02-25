@@ -7,10 +7,9 @@
           html, body {
             background-color: #eeeeee;
           }
-          pre.inset {
+          pre.inset, pre.thingbar {
+            box-sizing: border-box;
             width: 50%;
-            margin: 25% auto;
-            height: 100px;
             background-color: #ffffff;
             border: 1px solid #000000;
             border-radius: 2px;
@@ -18,10 +17,19 @@
             overflow: auto;
             text-overflow: ellipsis;
           }
+          pre.inset {
+            margin: 25% auto 0 auto;
+            height: 100px;
+          }
+          pre.thingbar {
+            margin: 0 auto 0 auto;
+            padding: 5px;
+          }
       </style>
   </head>
   <body>
     <pre class="inset"> There should be something here. But eh. </pre>
+    <pre class="thingbar"> <a href="https://github.com/INTPdevs">INTPDevs</a> | <a href="https://github.com/INTPdevs/INTPdevs.github.io">Website Sauce</a> | <a href="https://www.facebook.com/groups/855152957860657/">Faceblag</a> | <a href="http://goat.sex/">Don't Click</a></pre>
   </body>
 </html>
   
