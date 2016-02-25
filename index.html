@@ -31,11 +31,10 @@
             padding: 5px;
           }
           @keyframes flash {
-              0%  { color: inherit; text-shadow: inherit }
-              80% { color: #F00; text-shadow: 0px 0px 20px #FF6 }
-              90% { color: #FF0; text-shadow: 0px 0px 20px #EE3 }
-              100% { color: #FFF; text-shadow: 0px 0px 10px #DD0 }
-
+              0%  { color: inherit; text-shadow: inherit; font-weight: normal }
+              80% { color: #F00; text-shadow: 0px 0px 20px #FF6; font-weight: 800 }
+              90% { color: #FF0; text-shadow: 0px 0px 20px #EE3; font-weight: 900 }
+              100% { color: #FFF; text-shadow: 0px 0px 10px #DD0; font-weight: 1000 }
           }
           a:hover {
             animation: flash 0.2s ease infinite;
