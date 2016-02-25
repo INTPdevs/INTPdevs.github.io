@@ -1,0 +1,575 @@
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/
+body {
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+  .animated.infinite {
+    animation-iteration-count: infinite; }
+  .animated.hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s; }
+  .animated.bounceIn, .animated.bounceOut {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s; }
+  .animated.flipOutX, .animated.flipOutY {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s; }
+
+/**
+ * Random color madness
+ */
+body {
+  background: #FFF;
+  overflow-x: hidden;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  animation: pulse 10s infinite; }
+@keyframes pulse {
+  0% {
+    background-color: rgb(175, 70, 8); }
+  1% {
+    background-color: rgb(139, 254, 47); }
+  2% {
+    background-color: rgb(215, 239, 241); }
+  3% {
+    background-color: rgb(234, 226, 61); }
+  4% {
+    background-color: rgb(119, 189, 82); }
+  5% {
+    background-color: rgb(179, 96, 194); }
+  6% {
+    background-color: rgb(140, 150, 16); }
+  7% {
+    background-color: rgb(117, 64, 30); }
+  8% {
+    background-color: rgb(10, 60, 49); }
+  9% {
+    background-color: rgb(61, 55, 221); }
+  10% {
+    background-color: rgb(25, 228, 139); }
+  11% {
+    background-color: rgb(132, 205, 133); }
+  12% {
+    background-color: rgb(113, 185, 163); }
+  13% {
+    background-color: rgb(128, 209, 13); }
+  14% {
+    background-color: rgb(234, 238, 105); }
+  15% {
+    background-color: rgb(7, 14, 121); }
+  16% {
+    background-color: rgb(10, 108, 221); }
+  17% {
+    background-color: rgb(128, 24, 153); }
+  18% {
+    background-color: rgb(49, 54, 139); }
+  19% {
+    background-color: rgb(88, 146, 49); }
+  20% {
+    background-color: rgb(223, 55, 27); }
+  21% {
+    background-color: rgb(36, 64, 54); }
+  22% {
+    background-color: rgb(251, 1, 119); }
+  23% {
+    background-color: rgb(157, 68, 38); }
+  24% {
+    background-color: rgb(120, 215, 168); }
+  25% {
+    background-color: rgb(170, 13, 196); }
+  26% {
+    background-color: rgb(194, 155, 254); }
+  27% {
+    background-color: rgb(136, 170, 74); }
+  28% {
+    background-color: rgb(177, 59, 55); }
+  29% {
+    background-color: rgb(24, 214, 11); }
+  30% {
+    background-color: rgb(80, 211, 35); }
+  31% {
+    background-color: rgb(185, 136, 45); }
+  32% {
+    background-color: rgb(182, 182, 13); }
+  33% {
+    background-color: rgb(35, 152, 2); }
+  34% {
+    background-color: rgb(126, 39, 184); }
+  35% {
+    background-color: rgb(58, 242, 253); }
+  36% {
+    background-color: rgb(209, 189, 10); }
+  37% {
+    background-color: rgb(128, 234, 215); }
+  38% {
+    background-color: rgb(151, 34, 243); }
+  39% {
+    background-color: rgb(168, 163, 255); }
+  40% {
+    background-color: rgb(47, 213, 65); }
+  41% {
+    background-color: rgb(28, 197, 116); }
+  42% {
+    background-color: rgb(67, 211, 207); }
+  43% {
+    background-color: rgb(151, 115, 171); }
+  44% {
+    background-color: rgb(189, 114, 232); }
+  45% {
+    background-color: rgb(30, 155, 240); }
+  46% {
+    background-color: rgb(188, 159, 233); }
+  47% {
+    background-color: rgb(220, 168, 209); }
+  48% {
+    background-color: rgb(10, 113, 180); }
+  49% {
+    background-color: rgb(89, 132, 12); }
+  50% {
+    background-color: rgb(123, 213, 3); }
+  51% {
+    background-color: rgb(3, 219, 206); }
+  52% {
+    background-color: rgb(63, 89, 56); }
+  53% {
+    background-color: rgb(57, 28, 41); }
+  54% {
+    background-color: rgb(228, 16, 220); }
+  55% {
+    background-color: rgb(246, 147, 4); }
+  56% {
+    background-color: rgb(207, 80, 35); }
+  57% {
+    background-color: rgb(86, 210, 96); }
+  58% {
+    background-color: rgb(214, 188, 175); }
+  59% {
+    background-color: rgb(158, 26, 12); }
+  60% {
+    background-color: rgb(120, 20, 95); }
+  61% {
+    background-color: rgb(63, 220, 171); }
+  62% {
+    background-color: rgb(175, 190, 241); }
+  63% {
+    background-color: rgb(206, 64, 157); }
+  64% {
+    background-color: rgb(118, 20, 80); }
+  65% {
+    background-color: rgb(207, 99, 159); }
+  66% {
+    background-color: rgb(104, 189, 174); }
+  67% {
+    background-color: rgb(59, 151, 217); }
+  68% {
+    background-color: rgb(226, 49, 209); }
+  69% {
+    background-color: rgb(253, 23, 150); }
+  70% {
+    background-color: rgb(164, 125, 180); }
+  71% {
+    background-color: rgb(113, 42, 183); }
+  72% {
+    background-color: rgb(122, 74, 137); }
+  73% {
+    background-color: rgb(153, 152, 195); }
+  74% {
+    background-color: rgb(144, 48, 209); }
+  75% {
+    background-color: rgb(131, 42, 25); }
+  76% {
+    background-color: rgb(95, 65, 125); }
+  77% {
+    background-color: rgb(152, 8, 84); }
+  78% {
+    background-color: rgb(50, 168, 63); }
+  79% {
+    background-color: rgb(40, 94, 146); }
+  80% {
+    background-color: rgb(210, 103, 106); }
+  81% {
+    background-color: rgb(223, 8, 165); }
+  82% {
+    background-color: rgb(138, 66, 49); }
+  83% {
+    background-color: rgb(114, 112, 79); }
+  84% {
+    background-color: rgb(87, 145, 223); }
+  85% {
+    background-color: rgb(151, 119, 84); }
+  86% {
+    background-color: rgb(12, 129, 28); }
+  87% {
+    background-color: rgb(50, 26, 137); }
+  88% {
+    background-color: rgb(94, 162, 78); }
+  89% {
+    background-color: rgb(105, 198, 224); }
+  90% {
+    background-color: rgb(193, 73, 154); }
+  91% {
+    background-color: rgb(42, 36, 38); }
+  92% {
+    background-color: rgb(192, 66, 142); }
+  93% {
+    background-color: rgb(173, 81, 183); }
+  94% {
+    background-color: rgb(36, 113, 71); }
+  95% {
+    background-color: rgb(197, 117, 190); }
+  96% {
+    background-color: rgb(246, 0, 178); }
+  97% {
+    background-color: rgb(19, 186, 100); }
+  98% {
+    background-color: rgb(194, 58, 32); }
+  99% {
+    background-color: rgb(198, 238, 133); }
+  100% {
+    background-color: rgb(237, 81, 146); } }
+.hide {
+  display: none; }
+
+.char {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  bottom: 54px; }
+  .char .awesomesauce {
+    position: absolute;
+    bottom: 0px; }
+  .char .eth0 {
+    position: absolute;
+    bottom: 0px;
+    margin: auto 15%; }
+  .char .eth1 {
+    position: absolute;
+    bottom: 0px;
+    margin: auto 30%; }
+  .char .lifeissad {
+    position: absolute;
+    bottom: 0px;
+    margin: auto 35%; }
+
+.footer {
+  height: 64px;
+  line-height: 64px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  animation: footerMadness 10s infinite; }
+@keyframes footerMadness {
+  0% {
+    color: rgb(217, 67, 142);
+    background-color: rgb(104, 3, 128); }
+  1% {
+    color: rgb(185, 78, 41);
+    background-color: rgb(228, 16, 222); }
+  2% {
+    color: rgb(77, 145, 196);
+    background-color: rgb(89, 252, 15); }
+  3% {
+    color: rgb(22, 95, 238);
+    background-color: rgb(250, 0, 49); }
+  4% {
+    color: rgb(89, 171, 250);
+    background-color: rgb(150, 64, 110); }
+  5% {
+    color: rgb(213, 180, 83);
+    background-color: rgb(252, 101, 100); }
+  6% {
+    color: rgb(64, 36, 182);
+    background-color: rgb(8, 203, 20); }
+  7% {
+    color: rgb(101, 245, 109);
+    background-color: rgb(74, 249, 1); }
+  8% {
+    color: rgb(202, 86, 179);
+    background-color: rgb(68, 130, 34); }
+  9% {
+    color: rgb(182, 119, 241);
+    background-color: rgb(16, 26, 122); }
+  10% {
+    color: rgb(255, 115, 158);
+    background-color: rgb(45, 77, 159); }
+  11% {
+    color: rgb(90, 120, 163);
+    background-color: rgb(75, 91, 78); }
+  12% {
+    color: rgb(192, 160, 5);
+    background-color: rgb(188, 18, 79); }
+  13% {
+    color: rgb(186, 129, 68);
+    background-color: rgb(26, 198, 6); }
+  14% {
+    color: rgb(56, 177, 74);
+    background-color: rgb(152, 6, 37); }
+  15% {
+    color: rgb(85, 214, 162);
+    background-color: rgb(31, 150, 133); }
+  16% {
+    color: rgb(154, 57, 212);
+    background-color: rgb(222, 8, 107); }
+  17% {
+    color: rgb(249, 116, 6);
+    background-color: rgb(37, 205, 74); }
+  18% {
+    color: rgb(204, 52, 139);
+    background-color: rgb(104, 226, 128); }
+  19% {
+    color: rgb(174, 126, 140);
+    background-color: rgb(74, 50, 175); }
+  20% {
+    color: rgb(254, 247, 168);
+    background-color: rgb(139, 194, 160); }
+  21% {
+    color: rgb(139, 5, 179);
+    background-color: rgb(130, 72, 248); }
+  22% {
+    color: rgb(22, 68, 54);
+    background-color: rgb(220, 199, 42); }
+  23% {
+    color: rgb(89, 238, 101);
+    background-color: rgb(13, 189, 36); }
+  24% {
+    color: rgb(76, 116, 239);
+    background-color: rgb(39, 128, 115); }
+  25% {
+    color: rgb(66, 164, 42);
+    background-color: rgb(118, 87, 25); }
+  26% {
+    color: rgb(185, 75, 32);
+    background-color: rgb(191, 143, 145); }
+  27% {
+    color: rgb(233, 12, 126);
+    background-color: rgb(196, 147, 128); }
+  28% {
+    color: rgb(61, 64, 81);
+    background-color: rgb(218, 72, 116); }
+  29% {
+    color: rgb(163, 94, 169);
+    background-color: rgb(9, 165, 161); }
+  30% {
+    color: rgb(143, 114, 228);
+    background-color: rgb(228, 246, 192); }
+  31% {
+    color: rgb(25, 248, 93);
+    background-color: rgb(207, 78, 5); }
+  32% {
+    color: rgb(88, 112, 138);
+    background-color: rgb(181, 209, 197); }
+  33% {
+    color: rgb(104, 146, 62);
+    background-color: rgb(209, 150, 56); }
+  34% {
+    color: rgb(67, 254, 194);
+    background-color: rgb(102, 82, 59); }
+  35% {
+    color: rgb(77, 3, 148);
+    background-color: rgb(243, 135, 181); }
+  36% {
+    color: rgb(171, 14, 119);
+    background-color: rgb(223, 216, 206); }
+  37% {
+    color: rgb(100, 51, 181);
+    background-color: rgb(74, 206, 173); }
+  38% {
+    color: rgb(178, 9, 0);
+    background-color: rgb(132, 125, 169); }
+  39% {
+    color: rgb(89, 197, 87);
+    background-color: rgb(192, 129, 130); }
+  40% {
+    color: rgb(118, 185, 194);
+    background-color: rgb(236, 72, 77); }
+  41% {
+    color: rgb(53, 41, 48);
+    background-color: rgb(117, 36, 216); }
+  42% {
+    color: rgb(116, 44, 81);
+    background-color: rgb(185, 108, 187); }
+  43% {
+    color: rgb(28, 122, 155);
+    background-color: rgb(204, 92, 122); }
+  44% {
+    color: rgb(169, 40, 174);
+    background-color: rgb(13, 76, 207); }
+  45% {
+    color: rgb(32, 172, 213);
+    background-color: rgb(18, 151, 96); }
+  46% {
+    color: rgb(86, 232, 120);
+    background-color: rgb(81, 231, 237); }
+  47% {
+    color: rgb(124, 78, 98);
+    background-color: rgb(151, 56, 163); }
+  48% {
+    color: rgb(190, 230, 147);
+    background-color: rgb(80, 5, 13); }
+  49% {
+    color: rgb(6, 14, 112);
+    background-color: rgb(228, 243, 237); }
+  50% {
+    color: rgb(247, 255, 168);
+    background-color: rgb(18, 217, 130); }
+  51% {
+    color: rgb(251, 76, 194);
+    background-color: rgb(102, 175, 142); }
+  52% {
+    color: rgb(3, 236, 3);
+    background-color: rgb(108, 1, 232); }
+  53% {
+    color: rgb(28, 119, 179);
+    background-color: rgb(124, 187, 27); }
+  54% {
+    color: rgb(218, 52, 153);
+    background-color: rgb(164, 70, 105); }
+  55% {
+    color: rgb(84, 20, 209);
+    background-color: rgb(168, 6, 9); }
+  56% {
+    color: rgb(108, 160, 178);
+    background-color: rgb(173, 177, 188); }
+  57% {
+    color: rgb(47, 125, 211);
+    background-color: rgb(181, 166, 157); }
+  58% {
+    color: rgb(96, 160, 2);
+    background-color: rgb(88, 4, 224); }
+  59% {
+    color: rgb(79, 195, 96);
+    background-color: rgb(75, 227, 21); }
+  60% {
+    color: rgb(75, 134, 180);
+    background-color: rgb(225, 186, 126); }
+  61% {
+    color: rgb(6, 22, 47);
+    background-color: rgb(61, 225, 147); }
+  62% {
+    color: rgb(205, 47, 45);
+    background-color: rgb(238, 43, 134); }
+  63% {
+    color: rgb(148, 146, 19);
+    background-color: rgb(238, 186, 35); }
+  64% {
+    color: rgb(252, 189, 127);
+    background-color: rgb(16, 194, 103); }
+  65% {
+    color: rgb(201, 19, 187);
+    background-color: rgb(255, 223, 249); }
+  66% {
+    color: rgb(189, 168, 248);
+    background-color: rgb(23, 131, 111); }
+  67% {
+    color: rgb(55, 214, 141);
+    background-color: rgb(57, 5, 59); }
+  68% {
+    color: rgb(59, 166, 140);
+    background-color: rgb(30, 182, 102); }
+  69% {
+    color: rgb(7, 56, 98);
+    background-color: rgb(32, 163, 17); }
+  70% {
+    color: rgb(36, 249, 203);
+    background-color: rgb(68, 232, 20); }
+  71% {
+    color: rgb(148, 31, 178);
+    background-color: rgb(146, 12, 123); }
+  72% {
+    color: rgb(134, 228, 79);
+    background-color: rgb(124, 154, 148); }
+  73% {
+    color: rgb(33, 205, 64);
+    background-color: rgb(14, 52, 29); }
+  74% {
+    color: rgb(28, 143, 6);
+    background-color: rgb(200, 110, 32); }
+  75% {
+    color: rgb(208, 117, 125);
+    background-color: rgb(29, 245, 65); }
+  76% {
+    color: rgb(32, 185, 177);
+    background-color: rgb(207, 99, 87); }
+  77% {
+    color: rgb(157, 253, 126);
+    background-color: rgb(228, 73, 223); }
+  78% {
+    color: rgb(21, 61, 31);
+    background-color: rgb(21, 62, 179); }
+  79% {
+    color: rgb(140, 113, 172);
+    background-color: rgb(65, 124, 93); }
+  80% {
+    color: rgb(13, 232, 210);
+    background-color: rgb(210, 30, 134); }
+  81% {
+    color: rgb(60, 127, 4);
+    background-color: rgb(40, 70, 14); }
+  82% {
+    color: rgb(141, 254, 65);
+    background-color: rgb(204, 225, 1); }
+  83% {
+    color: rgb(99, 145, 63);
+    background-color: rgb(227, 70, 52); }
+  84% {
+    color: rgb(181, 131, 196);
+    background-color: rgb(93, 28, 85); }
+  85% {
+    color: rgb(23, 100, 239);
+    background-color: rgb(123, 168, 207); }
+  86% {
+    color: rgb(113, 132, 95);
+    background-color: rgb(57, 135, 150); }
+  87% {
+    color: rgb(81, 238, 91);
+    background-color: rgb(200, 46, 99); }
+  88% {
+    color: rgb(185, 113, 24);
+    background-color: rgb(43, 59, 140); }
+  89% {
+    color: rgb(187, 37, 168);
+    background-color: rgb(45, 76, 195); }
+  90% {
+    color: rgb(199, 25, 131);
+    background-color: rgb(228, 107, 141); }
+  91% {
+    color: rgb(140, 55, 199);
+    background-color: rgb(104, 166, 72); }
+  92% {
+    color: rgb(103, 14, 214);
+    background-color: rgb(48, 46, 8); }
+  93% {
+    color: rgb(172, 28, 54);
+    background-color: rgb(176, 187, 234); }
+  94% {
+    color: rgb(91, 219, 5);
+    background-color: rgb(75, 64, 235); }
+  95% {
+    color: rgb(142, 185, 13);
+    background-color: rgb(127, 207, 71); }
+  96% {
+    color: rgb(242, 163, 204);
+    background-color: rgb(210, 248, 35); }
+  97% {
+    color: rgb(90, 238, 207);
+    background-color: rgb(178, 47, 221); }
+  98% {
+    color: rgb(231, 159, 51);
+    background-color: rgb(124, 23, 69); }
+  99% {
+    color: rgb(178, 153, 98);
+    background-color: rgb(91, 113, 233); }
+  100% {
+    color: rgb(133, 170, 200);
+    background-color: rgb(46, 220, 176); } }
