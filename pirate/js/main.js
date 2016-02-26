@@ -50,14 +50,21 @@ $.fn.extend({
 (function($, undefined) {
 
 	var fullCharacter = $('#character'),
-		awesomesauce = $('.awesomesauce'),
 		eth0 = $('.eth0'),
 		eth1 = $('.eth1'),
 		lifeissad = $('.lifeissad');
 
-	var loopaudio = true;
+	var loopaudio = true,
+		durationOfAudioSample = 7956,
+		alternateAnimation = durationOfAudioSample / 16;
 
 	var pageWidth = $(document).width();
+
+	var lyrics = $('.songtext');
+
+	lyrics.css('top', Math.round($(window).height() / 4) + 'px' );
+
+	var lyricsArray = ['Yar - har - fiddle-dee-dee, being a pirate is alright with me!','Do what you want cuz a pirate is free, you are a pirate!'];
 
 	/**
 	 * On ready init function
@@ -65,8 +72,6 @@ $.fn.extend({
 	$( window ).load(function() {
 
 		$(this).audioShizzle( loopaudio );
-
-		lifeissad.hide();
 
 		var $curr = $('.toggle').first();
 		// Hide all the divs
@@ -92,14 +97,43 @@ $.fn.extend({
 				}
 			});
 			$curr.removeClass('hide');
-		}, 500);
+		}, alternateAnimation);
 
-		function animateRect() {
-			fullCharacter.css({ left: pageWidth })
-				.animate({ left: pageWidth - ( pageWidth + fullCharacter.width() ) }, 10000, animateRect);
-		}
+		var restart; 
 
-		animateRect();
+        function startAnimation() {
+
+        	var leftyside = parseInt(pageWidth - ( pageWidth + fullCharacter.width() )),
+        		flag = false;
+
+        	lifeissad.addClass('hideAnim');
+        	eth0.removeClass('hideAnim');
+			eth1.removeClass('hideAnim');
+
+			lyrics.text( lyricsArray[0] );
+
+        	fullCharacter.css({ left: pageWidth }).animate(
+        	{
+				left: leftyside + 'px'
+			}, {
+				queue: false,
+				duration: durationOfAudioSample,
+				step: function(now) {
+					if( Math.round(now) <= pageWidth/8 && !flag ) {
+						lifeissad.removeClass('hideAnim');
+			        	eth0.addClass('hideAnim');
+						eth1.addClass('hideAnim');
+						lyrics.text( lyricsArray[1] );
+						flag = true;
+					}
+				}
+			});
+
+			restart = setTimeout(startAnimation, durationOfAudioSample);
+        }
+
+        startAnimation();
+
 
 	});
 

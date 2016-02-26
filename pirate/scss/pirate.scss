@@ -2,6 +2,7 @@
 
 // These animations will be included
 $use-fadeIn: true;
+$use-wobble: true;
 // If you want to develop and don't need that seizure epilepsia attack
 $dev: true !default;
 
@@ -67,6 +68,7 @@ body {
 	font-weight: 900;
 	
 	animation: pulse 10s infinite;
+	animation-timing-function: linear;
 
 	@if $dev {
 		@keyframes pulse {
@@ -85,6 +87,29 @@ body {
 	display: none;
 }
 
+.hideAnim {
+	display: none;
+}
+
+.songtext {
+	position: relative;
+	text-align: center;
+	z-index: 100;
+
+	animation: songtext 5s infinite;
+	animation-timing-function: linear;
+
+	@if $dev {
+		@keyframes songtext {
+			@for $i from 0 through 100 {
+				#{$i * 1%} {
+					color: getRandomColor("rgb");
+				}
+			}
+		}
+	}
+}
+
 .char {
 
 	width: 400px;
@@ -92,6 +117,8 @@ body {
 
 	position: absolute;
 	bottom: 54px;
+
+	animation-timing-function: linear;
 
 	.awesomesauce {
 		position: absolute;
@@ -127,6 +154,7 @@ body {
 	text-align: center;
 	
 	animation: footerMadness 10s infinite;
+	animation-timing-function: linear;
 
 	@if $dev {
 		@keyframes footerMadness {
