@@ -1,34 +1,35 @@
-.card-group {
-	//margin: 0 1em;
-}
+.card {
 
-.card.card-block {
+	border: 0;
 
-	flex-grow: 1;
-	width: 30rem;
-	margin: 0.5rem;
+	&.card-block {
 
-	p {
-		margin: 3px 0;
-	}
+		flex-grow: 1;
+		width: 30rem;
+		margin: 0.5rem;
 
-	.card-header,
-	.table-header {
-		border: 0;
-	}
+		p {
+			margin: 3px 0;
+		}
 
-	.card-subtitle {
-		margin-bottom: 2rem;
-	}
+		.card-header,
+		.table-header {
+			border: 0;
+		}
 
-	.card-bock-collapsed {
-		width: 100%;
-		margin: 0.5rem 0;
-		border: 0;
-	}
+		.card-subtitle {
+			margin-bottom: 2rem;
+		}
 
-	.table th, .table td {
-		//border-color: $card-lines;
+		.card-bock-collapsed {
+			width: 100%;
+			margin: 0.5rem 0;
+			border: 0;
+		}
+
+		.table th, .table td {
+			//border-color: $card-lines;
+		}
 	}
 
 }
