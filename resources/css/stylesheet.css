@@ -1,0 +1,116 @@
+/**
+ *	ScSS Includes
+ */
+/**
+ *	General variables
+ */
+/**
+ *	Variables: generated colors
+ */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+.font__color--white {
+  color: white; }
+
+a.font__color--white {
+  color: white; }
+
+a.font__color--white:focus,
+a.font__color--white:hover {
+  color: shade(white, 10%); }
+
+.background__color--white {
+  background-color: white; }
+
+.font__color--trans-white {
+  color: rgba(255, 255, 255, 0.5); }
+
+a.font__color--trans-white {
+  color: rgba(255, 255, 255, 0.5); }
+
+a.font__color--trans-white:focus,
+a.font__color--trans-white:hover {
+  color: shade(rgba(255, 255, 255, 0.5), 10%); }
+
+.background__color--trans-white {
+  background-color: rgba(255, 255, 255, 0.5); }
+
+.font__color--black {
+  color: #1e1e24; }
+
+a.font__color--black {
+  color: #1e1e24; }
+
+a.font__color--black:focus,
+a.font__color--black:hover {
+  color: shade(#1e1e24, 10%); }
+
+.background__color--black {
+  background-color: #1e1e24; }
+
+.font__color--gray {
+  color: #6b717e; }
+
+a.font__color--gray {
+  color: #6b717e; }
+
+a.font__color--gray:focus,
+a.font__color--gray:hover {
+  color: shade(#6b717e, 10%); }
+
+.background__color--gray {
+  background-color: #6b717e; }
+
+/**
+ *	Fonts - Montserrat
+ */
+.btn.btn-secondary[data-toggle="collapsed"] {
+  background-color: transparent; }
+
+.btn.btn-secondary[data-toggle="collapse"] {
+  background-color: transparent; }
+
+.btn.btn-secondary {
+  border: 1px solid #5cb85c; }
+  .btn.btn-secondary:hover {
+    background-color: #5cb85c; }
+
+.card.card-block {
+  flex-grow: 1;
+  width: 30rem;
+  margin: 0.5rem; }
+  .card.card-block p {
+    margin: 3px 0; }
+  .card.card-block .card-header,
+  .card.card-block .table-header {
+    border: 0; }
+  .card.card-block .card-subtitle {
+    margin-bottom: 2rem; }
+  .card.card-block .card-bock-collapsed {
+    width: 100%;
+    margin: 0.5rem 0;
+    border: 0; }
+
+/**
+ *	Sticky footer styles
+ */
+html {
+  position: relative;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  /* Margin top by navbar height */
+  margin-top: 70px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background: linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
+  background-blend-mode: screen; }
+
+.container-fluid {
+  /* flexbox alignment */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; }

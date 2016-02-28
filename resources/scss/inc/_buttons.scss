@@ -1,0 +1,21 @@
+.btn {
+
+
+	&.btn-secondary[data-toggle="collapsed"] {
+		background-color: transparent;
+	}
+
+	&.btn-secondary[data-toggle="collapse"] {
+		background-color: transparent;
+	}
+
+	&.btn-secondary {
+
+		border: 1px solid map-get($buttons, green);
+
+		&:hover {
+			background-color: map-get($buttons, green);
+		}
+	}
+	
+}

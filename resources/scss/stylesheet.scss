@@ -1,0 +1,56 @@
+/**
+ *	ScSS Includes
+ */
+@import 'variables';
+@import 'inc/fonts';
+@import 'inc/buttons';
+@import 'inc/cards';
+
+/**
+ *	Sticky footer styles
+ */
+html {
+	position: relative;
+	min-height: 100%;
+
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+
+	/* Margin top by navbar height */
+	margin-top: 70px;
+
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.85rem;
+
+	height: 100%;
+	width: 100%;
+	padding: 0;
+
+	background:
+		linear-gradient(
+			limegreen,
+			transparent
+		),
+		linear-gradient(
+			90deg,
+			skyblue,
+			transparent
+		),
+		linear-gradient(
+			-90deg,
+			coral,
+			transparent
+		);
+	background-blend-mode: screen;
+
+}
+
+.container-fluid {
+	/* flexbox alignment */
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+

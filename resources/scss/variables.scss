@@ -1,0 +1,37 @@
+/**
+ *	General variables
+ */
+$buttons: (
+	green: rgba(92, 184, 92, 1)
+);
+
+$sassTheme: (
+	white: rgba(255, 255, 255, 1),
+	trans-white: rgba(255, 255, 255, 0.5),
+	black: rgba(30, 30, 36, 1),
+	gray: rgba(107, 113, 126, 1)
+);
+
+/**
+ *	Variables: generated colors
+ */
+@each $color, $sassColor in $sassTheme {
+
+	.font__color--#{$color} {
+		color: $sassColor;
+	}
+
+	a.font__color--#{$color} {
+		color: $sassColor;
+	}
+
+	a.font__color--#{$color}:focus,
+	a.font__color--#{$color}:hover {
+		color: shade( $sassColor, 10% );
+	}
+
+	.background__color--#{$color} {
+		background-color: $sassColor;
+	}
+
+}
