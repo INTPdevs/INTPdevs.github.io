@@ -106,6 +106,21 @@ a.font__color--blue:hover {
   .btn-secondary:hover {
     background-color: #5cb85c; }
 
+.btn-tertiary[data-toggle="collapsed"] {
+  background-color: transparent; }
+
+.btn-tertiary[data-toggle="collapse"] {
+  background-color: transparent;
+  color: #d9534f; }
+  .btn-tertiary[data-toggle="collapse"]:hover {
+    color: white; }
+
+.btn-tertiary {
+  border: 1px solid #d9534f;
+  color: 1px solid #d9534f; }
+  .btn-tertiary:hover {
+    background-color: #d9534f; }
+
 .card {
   border: 0; }
   .card.card-block {

@@ -47,5 +47,29 @@
 			background-color: map-get($buttons, green);
 		}
 	}
+
+	// tertiary buttons
+	&-tertiary[data-toggle="collapsed"] {
+		background-color: transparent;
+	}
+
+	&-tertiary[data-toggle="collapse"] {
+		background-color: transparent;
+		color: map-get($buttons, red);
+
+		&:hover {
+			color: map-get($buttons, white);
+		}
+	}
+
+	&-tertiary {
+
+		border: 1px solid map-get($buttons, red);
+		color: 1px solid map-get($buttons, red);
+
+		&:hover {
+			background-color: map-get($buttons, red);
+		}
+	}
 	
 }
