@@ -2,14 +2,17 @@
  *	General variables
  */
 $buttons: (
-	green: rgba(92, 184, 92, 1)
+	green: rgba(92, 184, 92, 1),
+	blue: rgba(2, 117, 216, 1),
+	white: rgba(255, 255, 255, 1)
 );
 
 $sassTheme: (
 	white: rgba(255, 255, 255, 1),
 	trans-white: rgba(255, 255, 255, 0.5),
 	black: rgba(30, 30, 36, 1),
-	gray: rgba(107, 113, 126, 1)
+	gray: rgba(107, 113, 126, 1),
+	blue: rgba(2, 117, 216, 1)
 );
 
 /**
